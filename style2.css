@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,700;1,400&family=Roboto:wght@100;700;900&display=swap');
+
+:root {
+    --cor_fundo: #FCFFD5;
+    --cor_destaque:#96D142;
+    --cor_quadrados:#EEF597;
+    --cor_navbar:#48B3F0;
+    --cor_letra:#FFFFFF;
+    --cor_letradest:#374129;
+}
+
+body {
+    padding: 0;
+    margin: 0 auto;
+    background-color: var(--cor_fundo);
+    color: var(--cor_letra);
+    font-family: 'Roboto';
+}
+
+/*Navegação*/
+
+.nav-bar {
+    background-color: #48B3F0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: var(--cor_letra);
+    padding: 10px;
+    font-weight: 400;
+}
+
+#logo {
+    font-weight: 900;
+    font-size: 20px;
+}
+
+#compras:hover {
+    border-bottom: 4px solid var(--cor_destaque);
+}
+
+/* Conteudo */
+
+footer {
+    background-color: var(--cor_navbar);
+    padding: 30px;
+}

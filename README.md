@@ -1,4 +1,4 @@
-# SuasComprasProjeto
+# SuasComprasProjeto :shopping_cart:
 Olá, este é um projeto feito em Python, Html,CSS e utiliza Postgre como banco de dados, ela possui uma versão no figma e pode ser visualizada.
 
 ## Visualizar no Figma

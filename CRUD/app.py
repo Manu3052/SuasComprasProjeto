@@ -30,12 +30,12 @@ def seleciona_compras():
     listas_classes = Listas_compras.query.all()
     listas_json = [lista.to_json() for lista in listas_classes]
 
-    return gera_response(json.dumps(200, "listas",listas_json))
+    return gera_response(json.dumps(200, "lista",listas_json))
 
 
 #Selecionar Individual
 @app.route("/lista/<id>", methods=["GET"])
-def seleciona_umobjeto(id):
+def seleciona_compra(id):
     lista_classe = Listas_compras.query.filter_by(id=id).first()
     lista_json = lista_classe.to_json()
 

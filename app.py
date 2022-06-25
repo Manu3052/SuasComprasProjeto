@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:manuele203@localhost:5432/Lista'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///compras.db'
 
 db = SQLAlchemy(app)
 
@@ -36,14 +36,11 @@ def seleciona_compra(id):
     lista_json = lista_classe.to_json()
 
     return gera_response(200, "Lista",lista_json)
-
 #Cadastrar
 @app.route("/lista", methods=["POST"])
 def criar_dado():
     body = request.get_json()
-
     #validar os parametros
-        
     try:
         lista = Listas_compras(nome=body["nome"], quantidade=body["quantidade"], valor=body["valor"])
         db.session.add(lista)
@@ -59,7 +56,6 @@ def atualiza_dado(id):
     #pega a lista
     lista_classe = Listas_compras.query.filter_by(id=id).first()
     body = request.get_json()
-
     try:
         if('nome' in body):
             lista_classe .nome = body['name']
@@ -67,7 +63,6 @@ def atualiza_dado(id):
             lista_classe .email = body['quantidade']
         if('valor' in body):
             lista_classe .email = body['valor']
-
         db.session.add(lista_classe)
         db.session.commit()
         return gera_response(200,"lista", lista_classe.to_json(), "Atualizado com Sucesso")
@@ -79,7 +74,6 @@ def atualiza_dado(id):
 @app.route("/lista/<id>", methods=["DELETE"])
 def deletar_item(id):
     lista_classe = Listas_compras.query.filter_by(id=id).first()
-
     try:
         db.session.delete(lista_classe)
         db.session.commit()

@@ -56,6 +56,11 @@ body,li {
     margin: 0 auto;
 }
 
+img {
+    display: block;
+    max-width: 80%;
+}
+
 #imagem {
     max-width: 250px;
     padding: 10px;

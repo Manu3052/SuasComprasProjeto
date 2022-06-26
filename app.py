@@ -1,5 +1,5 @@
 from email.mime import application
-from flask import Flask, Response, request
+from flask import Flask, Response, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -19,6 +19,16 @@ class Listas_compras(db.Model):
         return{"id":self.id, "nome":self.nome,"quantidade":self.quantidade,"valor":self.valor}
     
 db.create_all()
+
+#Home
+@app.route("/")
+def home():
+    return render_template('home.html')
+
+#Lista
+@app.route("/listando")
+def listando():
+    return render_template('lista.html')
 
 #selecionar tudo
 @app.route("/lista", methods=["GET"])
@@ -77,7 +87,7 @@ def deletar_item(id):
     try:
         db.session.delete(lista_classe)
         db.session.commit()
-        return gera_response(200, "lista", lista_classe.to_json(), "Deletada com Ducesso")
+        return gera_response(200, "lista", lista_classe.to_json(), "Deletada com Sucesso")
     except Exception as e:
         print("Erro", e)
         return gera_response("lista", {}, "Erro ao deletar")
@@ -91,6 +101,6 @@ def gera_response(status, nome_do_conteudo, conteudo, mensagem=False):
         body["mensagem"] = mensagem
 
     return Response(json.dumps(body), status=status, mimetype=application()/json)
-
-if __name__ == 'main':
+print(__name__)
+if __name__ == '__main__':
     app.run(debug=True)

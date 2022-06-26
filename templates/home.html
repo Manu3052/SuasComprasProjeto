@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='assets/favicon.ico')}}type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homestyle.css')}}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <nav class="nav-bar">
+        <a id='logo' href="/" target="_self">
+            SuasCompras
+        </a>
+        <a id='compras' href="/listando" target="_self">
+            Lista
+        </a>
+    </nav>
+    <main>
+        <section class="conteudo">
+            <aside class="imagem-wrap">
+                <div class="quadrado">
+                    <div class="quadrado2"></div>
+                    <img id="imagem" src="{{url_for('static', filename='assets/carrinho.png')}}"
+                    
+                    alt="Carrinho vermelho cheio de compras">
+                </div>
+                
+            </aside>
+            <aside class="texto">
+                <h1>Sua Lista de Compras na</h1>
+                <h1>Mão</h1>
+                <ul>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                        <a href="#">Organizado por ordem alfabética</a>
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                            <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                        </svg>
+                        <a href="#">Soma total das compras</a>
+                    </li>
+                </ul>
+            </aside>
+        </section>
+    </main>
+    <footer>
+        copyright©23/06 Manuele M.
+    </footer>
+</body>
+</html>

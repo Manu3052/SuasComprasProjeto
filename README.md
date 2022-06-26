@@ -13,15 +13,21 @@ https://www.figma.com/proto/FvAJlkYKrBclCR7iXSzWdc/SuasCompras?node-id=6%3A16&sc
 ### Desktop:
 https://www.figma.com/proto/FtfyetO03N1B54g8H1mxB1/DesktopSuasCompras?node-id=5%3A71&scaling=scale-down&page-id=0%3A1&starting-point-node-id=5%3A53&hide-ui=1
 
+## Requerimentos
+Para baixar os requerimentos vá até o terminal e digite:
+`pip install -r requirements.txt`
+
 ## Inicializar a API
 Para iniciar escolha o arquivo **app.py**
-e no terminal utilize o comando `python .\app.py`
+e no terminal utilize os comandosn na seguinte ordem:
+<br>
+`flask run`
+<br>
+`python .\app.py`
 
+## Entrar na Página
 
-
-## Banco de dados
-
-## Frontend
+Após o comando do item anterior um link será gerado no terminal, basta clicar sobre segurando `CTRL + CLICK` 
 
 
 
